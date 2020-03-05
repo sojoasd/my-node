@@ -5,17 +5,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const router = express.Router();
-
-router.get("/test", function(req, res, next) {
-  res.json({
-    error: {
-      message: error.message
-    }
-  });
-});
-
-app.use("/", router);
+app.get("/hello", (req, res) => res.send({ status: "kerker" }));
 
 // console.log("__dirname: ", __dirname);
 const port = 5001;
